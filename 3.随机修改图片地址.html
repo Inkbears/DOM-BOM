@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            background-color: pink;
+        }
+
+        .active {
+            width: 200px;
+        }
+
+        .one {
+            margin-top: 200px;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/1.jpg" alt="">
+    <script>
+        let img = document.querySelector('img')
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        let num = getRandom(1, 6)
+
+        img.src = `./images/${num}.jpg`
+        // 改变样式属性
+        // img.style.width = '500px'
+        // 改变类名
+        img.className = 'active'
+        // 增加类
+        img.classList.add('one')
+        // 移除类
+        img.classList.remove('active')
+        // 切换类，有时去掉，没有时增加
+        img.classList.toggle('active')
+
+
+
+    </script>
+</body>
+
+</html>

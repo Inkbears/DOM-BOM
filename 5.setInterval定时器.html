@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button disabled>0</button>
+    <script>
+        let btn = document.querySelector('button')
+        let num = 0
+
+        // 间隔一定时间执行参数函数，第一个参数是执行代码，第二个参数是间隔时间
+        let timer = setInterval(() => {
+            btn.innerText = num
+            console.log(`这是定时器计数：${num}`);
+            num++
+            if (num === 5) {
+                // 清除计时器
+                clearInterval(timer)
+                // 接触按钮禁用状态
+                btn.disabled = false
+            }
+
+        }, 1000)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .right {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <span>请输入数字与字母</span>
+
+    <script>
+        let input = document.querySelector('input')
+        let span = document.querySelector('span')
+        // 失去焦点事件
+        input.addEventListener('blur', () => {
+            // 正则表示  数组大写小写字母数字，6-16位
+            if (/^[a-zA-Z0-9]{6,16}$/.test(input.value)) {
+                span.innerHTML = '输入正确'
+                span.className = 'right'
+            } else {
+                span.innerHTML = '输入有误，请重新输入'
+                span.className = 'error'
+            }
+
+        })
+    </script>
+</body>
+
+</html>

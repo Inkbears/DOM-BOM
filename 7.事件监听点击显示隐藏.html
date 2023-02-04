@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>隐藏</button>
+    <button class="show">显示</button>
+    <img src="./images/1.jpg" alt="" class="pic">
+
+    <script>
+        // 获取对象
+        let btn = document.querySelector('button')
+        let btn1 = document.querySelector('.show')
+        let pic = document.querySelector('.pic')
+
+        // 事件监听
+        btn.addEventListener('click', () => {
+            pic.style.display = 'none'
+        })
+        btn1.addEventListener('click', () => {
+            pic.style.display = 'block'
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>我是小li</li>
+        <li>我是小li</li>
+        <li>我是小li</li>
+        <li>我是小li</li>
+        <li>我是小li</li>
+    </ul>
+
+    <script>
+        let ul = document.querySelector('ul')
+        //克隆节点： 元素.cloneNode(布尔值) 默认false，如果是true连同后代克隆
+        let newUl = ul.cloneNode(true)
+        console.log(newUl);
+    </script>
+</body>
+
+</html>

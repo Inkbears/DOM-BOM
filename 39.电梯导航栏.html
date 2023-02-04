@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            margin: 350px 0 1350px 0;
+        }
+
+        .body div {
+            width: 500px;
+            height: 250px;
+            margin: 0 auto;
+            border-radius: 0 20px 20px 20px;
+            margin-bottom: 25px;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .nav {
+            position: fixed;
+            left: 20px;
+            top: 350px;
+        }
+
+        .nav div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="blue"> 服装潮牌</div>
+        <div class="green"> 鞋子靴子</div>
+        <div class="pink"> 电子产品</div>
+        <div class="orange">学习用具</div>
+        <div class="purple">医用药品</div>
+    </div>
+
+
+    <div class="nav">
+        <div class="red">服装潮牌</div>
+        <div>鞋子靴子</div>
+        <div>电子产品</div>
+        <div>学习用具</div>
+        <div>医用药品</div>
+    </div>
+
+
+    <script>
+        let items = document.querySelectorAll('.body div')
+        let tips = document.querySelectorAll('.nav div')
+
+        tips.forEach((tip, index) => {
+            tip.addEventListener('click', () => {
+                // 主体区域距离顶部的位置
+                console.log(items[index].offsetTop);
+                // 让屏幕滚动到，主体距离顶部的距离，让主体区域置顶
+                document.documentElement.scrollTop = items[index].offsetTop
+                // 去掉背景
+                document.querySelector('.red').classList.remove('red')
+                // 加上背景
+                tip.classList.add('red')
+            })
+
+        })
+    </script>
+</body>
+
+</html>

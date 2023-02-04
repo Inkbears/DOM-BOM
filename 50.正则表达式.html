@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // test()检测是否存在
+        let str = '我超级喜欢打游戏'
+        // 定义正则
+        //  /正则字符串/   / */为正则字面量  
+        let reg = /游戏/
+        // 检测是否reg是否在str内， 存在返回true
+        console.log(reg.test(str));
+
+
+        // exec()检测存在返回数组，不存在返回null
+        let str1 = '我学前端，前端使我快乐'
+
+        let reg1 = /前端/
+
+        console.log(reg1.exec(str1))
+    </script>
+</body>
+
+</html>

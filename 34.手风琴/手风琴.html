@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>手风琴</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 1200px;
+      height: 400px;
+      margin: 50px auto;
+      border: 1px solid red;
+      overflow: hidden;
+    }
+
+    div li {
+      width: 240px;
+      height: 400px;
+      float: left;
+      /* 所有属性获得过渡效果，时间为500ms */
+      transition: all 500ms;
+    }
+
+    div ul {
+      width: 1200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <ul>
+      <li>
+        <a href="#">
+          <img src="./images/1.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/2.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/3.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/4.jpg" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./images/5.jpg" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+
+  let lis = document.querySelectorAll('li')
+  lis.forEach((li) => {
+    // 当鼠标进入小li
+    li.addEventListener('mouseenter', () => {
+      // 排他思想让所有小li复原
+      lis.forEach(li => {
+        li.style.width = '80px'
+      })
+      // 让选中的小li 变为800px
+      li.style.width = '880px'
+    })
+    // 当鼠标离开小li
+    li.addEventListener('mouseleave', () => {
+      // 排他思想让所有小li复原
+      lis.forEach(li => {
+        li.style.width = '240px'
+      })
+    })
+  })
+
+
+
+</script>
+
+</html>

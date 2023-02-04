@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .pink {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .black {
+            width: 500px;
+            height: 2000px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .to_top {
+            display: none;
+            position: fixed;
+            top: 700px;
+            left: 50%;
+            margin-left: 270px;
+            height: 200px;
+            width: 50px;
+            background-color: gray;
+            z-index: 100;
+            transition: all 5000ms;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pink"></div>
+    <div class="black"></div>
+    <div class="to_top">点击返回顶部</div>
+
+    <script>
+        let toTop = document.querySelector('.to_top')
+        // 监听滚动事件
+        window.addEventListener('scroll', () => {
+
+            // 距离顶部滚动的位置
+            let num = document.documentElement.scrollTop
+            console.log(toTop.offsetLeft);   //距离左边的像素
+            console.log(toTop.offsetTop);   //距离顶部的像素
+
+            console.log(toTop.offsetWidth);   //距离左边的像素
+            console.log(toTop.offsetHeight);   //距离顶部的像素
+            if (num > 500) {
+                toTop.style.display = 'block'
+            } else {
+                toTop.style.display = 'none'
+                toTop.style.width = '50px'
+            }
+
+
+        })
+
+        toTop.addEventListener('click', () => {
+            document.documentElement.scrollTop = 0
+        })
+    </script>
+</body>
+
+</html>

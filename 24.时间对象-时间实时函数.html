@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 50px;
+            line-height: 50px;
+            width: 400px;
+            background-color: pink;
+            border: 1px solid gray;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        let div = document.querySelector('div')
+        // 调用一次减少一秒空白时间
+        getTime()
+        setInterval(getTime, 1000)
+
+        // 当前时间函数
+        function getTime() {
+            // 实例化时间对象
+            let date = new Date()
+            let years = date.getFullYear()
+            let month = date.getMonth()
+            let dates = date.getDate()
+            let day = date.getDay()
+            let hours = date.getHours()
+            let minu = date.getMinutes()
+            let sec = date.getSeconds()
+            div.innerHTML = `${years}年${month + 1}月${dates}日${hours}:${minu}:${sec}秒 星期${day}`
+        }
+    </script>
+</body>
+
+</html>

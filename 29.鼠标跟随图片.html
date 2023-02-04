@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pig {
+            width: 100px;
+            height: 110px;
+        }
+
+        .lulu {
+            width: 150px;
+            margin-right: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <img src="./images/lulu.png" alt="" class="lulu">
+    <img src="./images/pig.gif" alt="" class="pig">
+
+    <script>
+        let pig = document.querySelector('.pig')
+        let lulu = document.querySelector('.lulu')
+        // 定义计时器
+        let timer;
+        document.addEventListener('mousemove', (e) => {
+            let rights = 200
+            lulu.style.marginRight = rights
+
+            // console.log(e.pageX, e.pageY);
+            lulu.style.marginLeft = e.pageX - 70 + 'px'
+            lulu.style.marginTop = e.pageY - 100 + 'px'
+            // 清除上一次留下的计时器
+            clearInterval(timer)
+            timer = setInterval(() => {
+                if (rights >= -15) {
+                    lulu.style.marginRight = rights-- + 'px'
+                    console.log(lulu.style.marginRight)
+                } else {
+                    clearInterval(timer)
+                    lulu.src =''
+                    alert('露露被吃了,游戏结束')
+                }
+
+
+            }, 10)
+
+        })
+
+
+    </script>
+</body>
+
+</html>

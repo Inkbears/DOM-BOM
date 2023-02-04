@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 量词：设定某个模式出现的次数
+        // *表示重复0次或者更多次
+        console.log(/露*/.test('露露露露露'));
+        // +表示重复一次或更多次
+        console.log(/露+/.test('喜欢向屁屁'));
+        console.log(/露+/.test('喜欢向露'));
+        // ?表示重复0次或者一次
+        console.log(/露?/.test('喜欢向屁屁'));   //true  
+        console.log(/^露?$/.test('露露'));   //false  
+        // {n}出现n次   {n,}出现n次或者更多   {n,m}出现n到m次
+    </script>
+</body>
+
+</html>

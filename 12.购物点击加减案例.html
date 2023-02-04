@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 150px;
+            height: 90px;
+        }
+
+        #input {
+            margin: 0;
+            padding: 0;
+            border: 1px solid gray;
+            position: absolute;
+            width: 105px;
+            height: 88px;
+            text-align: center;
+        }
+
+        #add {
+            position: absolute;
+            border: 1px solid gray;
+            padding: 0;
+            width: 45px;
+            height: 45px;
+            right: 0px;
+        }
+
+        #sub {
+            position: absolute;
+            border: 1px solid gray;
+            padding: 0;
+            width: 45px;
+            height: 45px;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="input" value="1" readonly>
+        <input type="button" value="+" id="add">
+        <input type="button" value="-" id="sub">
+    </div>
+
+    <script>
+        let input = document.querySelector('#input')
+        let add = document.querySelector('#add')
+        let sub = document.querySelector('#sub')
+
+        sub.disabled = true
+
+        add.addEventListener('click', () => {
+            input.value++
+            sub.disabled = false
+            if (input.value >= 10) {
+                add.disabled = true
+            }
+        })
+        sub.addEventListener('click', () => {
+            add.disabled = false
+            input.value--
+            if (input.value <= 1) {
+                sub.disabled = true
+            }
+        })
+    </script>
+</body>
+
+</html>

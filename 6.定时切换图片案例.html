@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 0 auto;
+            background-color: pink;
+            width: 300px;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./images/1.jpg" alt="">
+        <div class="info">猫咖露露</div>
+
+    </div>
+
+    <script>
+        let info = ['猫咖露露', '宿舍露露', '白云山露露', '水上乐园露露', '亲嘴露露', '猫咖露露2']
+
+        let img = document.querySelector('img')
+        let div = document.querySelector('.info')
+        let num = 0;
+
+        let timer = setInterval(() => {
+
+            div.innerText = info[num]
+            img.src = `./images/${num + 1}.jpg`
+            console.log(num, info[num], img.src);
+            num++
+            if (num === info.length) {
+                num = 0
+            }
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>

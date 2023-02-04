@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>我是小li0</li>
+        <li>我是小li1</li>
+        <li>我是小li2</li>
+    </ul>
+
+    <script>
+        let btn = document.querySelector('button')
+        let ul = document.querySelector('ul')
+        let li = document.querySelector('li')
+
+        btn.addEventListener('click', () => {
+            // 父元素.remoceChild(要删除的子元素)删除节点
+            ul.removeChild(ul.children[0])
+            // 只能删除子节点
+        })
+    </script>
+</body>
+
+</html>

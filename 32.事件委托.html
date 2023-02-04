@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是小1li</li>
+        <li>我是小2li</li>
+        <li>我是小3li</li>
+        <li>我是小4li</li>
+        <li>我是小5li</li>
+        <li>我是小6li</li>
+    </ul>
+
+    <script>
+        // 只需要注册父事件源，从父事件源事件中找出当前操作的子节点
+        let ul = document.querySelector('ul')
+
+        ul.addEventListener('click', (e) => {
+            console.log(e);
+            // 事件委托   
+            e.target.classList.toggle('pink')
+        })
+    </script>
+</body>
+
+</html>

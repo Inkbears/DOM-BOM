@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象类型存储
+        let obj = {
+            'uname': '向露',
+            'oname': '向屁屁',
+            'gender': 'girl',
+            'age': 22,
+
+        }
+        // 把复杂的数据类型转换为json类型，存储到localStorage
+        localStorage.setItem('obj', JSON.stringify(obj))
+        // 解析JSON后，从localStorage取出
+        console.log(JSON.parse(localStorage.getItem('obj')));
+
+
+        // 数组类型存储
+        let arr = [1, 2, 3, 4, 5, 6, 'lulu']
+
+        localStorage.setItem('arr', JSON.stringify(arr))
+
+        console.log(JSON.parse(localStorage.getItem('arr')))
+
+
+
+    </script>
+</body>
+
+</html>

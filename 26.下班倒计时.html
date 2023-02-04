@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: rgb(235, 54, 72);
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2021年8月28日</p>
+    <p class="title">任务倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="scond">20</span>
+    </p>
+    <p class="tips">
+      现在是18:30:00
+    </p>
+  </div>
+
+  <script>
+    // 获取事件源
+    let next = document.querySelector('.next')
+    let tips = document.querySelector('.tips')
+    let hour = document.querySelector('#hour')
+    let minutes = document.querySelector('#minutes')
+    let scond = document.querySelector('#scond')
+    nowTime()
+
+    setInterval(nowTime, 1000)
+
+    function nowTime() {
+      // 格式化时间对象的方法
+      let date = new Date()
+      let days = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期七',]
+      let years = date.getFullYear()
+      let month = date.getMonth() + 1
+      let dates = date.getDate()
+      let day = date.getDay()
+      let hours = date.getHours()
+      let minu = date.getMinutes()
+      let sec = date.getSeconds()
+
+      // 时间戳差值获取
+      nowDate = + new Date()
+      goleDate = new Date('2023-1-13 21:00:00')
+      // 除以1000转换为秒数
+      reDate = (goleDate - nowDate) / 1000
+
+      // 根据时间戳计算时分秒
+      let h = parseInt(reDate / 60 / 60 % 24)
+      let m = parseInt(reDate / 60 % 60)
+      let s = parseInt(reDate % 60)
+
+      // 给时分秒补零
+      let hms = addZero(h, m, s)
+      h = hms[0]
+      m = hms[1]
+      s = hms[2]
+      let nowhms = addZero(hours, minu, sec)
+      hours = nowhms[0]
+      minu = nowhms[1]
+      sec = nowhms[2]
+
+
+
+
+      console.log(h, m, s);
+      hour.innerHTML = h
+      minutes.innerHTML = m
+      scond.innerHTML = s
+
+      next.innerHTML = `今天是${years}年${month}月${dates}日`
+      tips.innerHTML = `现在是${hours}:${minu}:${sec}`
+    }
+
+    // 给年月日补零函数
+    function addZero(h, m, s) {
+      h = h < 10 ? '0' + h : h
+      m = m < 10 ? '0' + m : m
+      s = s < 10 ? '0' + s : s
+      return [h, m, s]
+    }
+  </script>
+</body>
+
+</html>

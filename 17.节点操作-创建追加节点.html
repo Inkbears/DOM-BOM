@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <ul>
+        <li>我是大li</li>
+    </ul>
+
+    <script>
+        let ul = document.querySelector('ul')
+        // 创建li标签节点
+        let li = document.createElement('li')
+        li.innerHTML = '我是小li'
+        // 在ul子节点最后面追加小li
+        ul.appendChild(li)
+        // 在ul首位置追加li
+        ul.insertBefore(li, ul.children[0])
+
+    </script>
+</body>
+
+</html>

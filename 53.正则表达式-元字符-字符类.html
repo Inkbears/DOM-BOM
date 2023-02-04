@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符类[]
+        // 表示中括号内的字符abc，是否出现在被检测的字符串'defg'中
+        console.log(/[abc]/.test('defg'));
+        console.log(/[abc]/.test('abc'));
+        console.log(/[abc]/.test('defc'));
+        console.log(/[abc]/.test('deag'));
+        console.log(/[abc]/.test(''));
+
+        // 连字符 - 如  [a-z]   [0-9]   [a-zA-Z]表示26英文字母，不区分大小写
+        console.log(/[a-z]/.test('cc'))
+        // 26字母和0-9中其中一个
+        console.log(/^[1-9a-zA-z]*$/.test('123'))
+        console.log(/^[1-9a-zA-z]*$/.test('abc'))
+        console.log(/^[1-9a-zA-z]*$/.test('DEF'))
+        console.log(/^[0-9a-zA-z]*$/.test('*-/'))
+    </script>
+</body>
+
+</html>
